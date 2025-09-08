@@ -1,28 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/login.css">
 </head>
 <body>
-    <div>
-        <h2>Inicio de Sesión</h2>
-        <form id="loginFormulario">
-            <div>
-                <label for="username">Nombre de usuario:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div>
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div>
-                <button type="submit">Iniciar sesión</button>
-            </div>
-        </form>
+    <!-- Barra de navegacion -->
+    <header>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+        <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        Bootstrap
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+            </li>
+        </ul>
+        </div>
     </div>
+    </nav>
+
+    </header>
+
+    <!-- Formulario de inicio de sesión con Bootstrap 5 -->
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center login-container"> <!--Clase de CSS-->
+            <div class="col-xs-10 col-sm-10 col-lg-10 col-xl-8 col-xxl-7">
+                <div class="card shadow-lg login-card"> <!--Clase de CSS-->
+                    <div class="row">
+                        <div class="col-xs-5 col-sm-5 col-lg-4 col-xl-6 col-xxl-6"> <!--Clase de CSS-->
+                            <div class="p-5">
+                                <h2 class="text-center">Iniciar sesion</h2>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary">Iniciar sesion</button>
+                                    </div>  
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-none d-lg-block login-image-bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Importando javascript de Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="javascript/roles.js"></script>
     <script src="javascript/login.js"></script>
-</body>
+  </body>
 </html>

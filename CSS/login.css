@@ -1,0 +1,13 @@
+.login-container {
+    min-height: 100vh;
+}
+
+.login-card {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.login-image-bg {
+    background: url('https://media.glamour.es/photos/6596d27a7a860f04ff21db8c/16:9/w_2560%2Cc_limit/GettyImages-1397108844.jpg') no-repeat center center;
+    background-size: cover;
+}
