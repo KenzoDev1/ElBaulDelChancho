@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <style>
+        /* Estilo simple para resaltar productos con stock crítico */
+        .stock-critico { background-color: #ffdddd; }
+    </style>
+</head>
+<body>
+    <!-- Contenedor principal del panel de Gestión de Usuarios-->
+    <div>
+        <!-- La etiqueta <aside> crea una barra de navegación lateral ;) -->
+        <aside>
+            <h2>Administración</h2>
+            <nav>
+                <ul>
+                    <li><a href="menuadmin.html">Inicio</a></li>
+                    <li><a href="gestion-productos.html">Gestión de Productos</a></li>
+                    <li><a href="gestion-usuarios.html">Gestión de Usuarios</a></li>
+                    <li><a href="../login.html">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main>
+            <h1>Gestión de Productos</h1>
+
+            <div>
+                <h3 id="form-titulo">Añadir Nuevo Producto</h3>
+                <!-- Contenedor para mostrar errores de validación -->
+                <div id="errores-form" style="color: red;"></div>
+
+                <form id="form-producto">
+                    <input type="hidden" id="producto-id">
+
+                    <div>
+                        <label for="producto-codigo">Código del Producto</label>
+                        <input type="text" id="producto-codigo" minlength="3" required>
+                    </div>
+                    
+                    <div>
+                        <label for="producto-nombre">Nombre del Producto</label>
+                        <input type="text" id="producto-nombre" maxlength="100" required>
+                    </div>
+
+                    <div>
+                        <label for="producto-precio">Precio</label>
+                        <input type="number" id="producto-precio" min="0" step="0.01" required>
+                    </div>
+
+                    <div>
+                        <label for="producto-stock">Stock</label>
+                        <input type="number" id="producto-stock" min="0" required>
+                    </div>
+
+                    <div>
+                        <label for="producto-categoria">Categoría</label>
+                        <select id="producto-categoria" required>
+                            <option value="">-- Seleccione una categoría --</option>
+                            <option value="figuras">Estrategia</option>
+                            <option value="musica">Party Games</option>
+                            <option value="antiguedades">Temático</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="producto-descripcion">Descripción (Opcional)</label>
+                        <textarea id="producto-descripcion" rows="4" maxlength="500"></textarea>
+                    </div>
+                    <div>
+                        <label for="producto-imagen">URL de Imagen (Opcional)</label>
+                        <input type="text" id="producto-imagen" placeholder="Ej: ../images/producto.jpg">
+                    </div>
+                    <div>
+                        <label for="producto-stock-critico">Stock Crítico (Opcional)</label>
+                        <input type="number" id="producto-stock-critico" min="0" placeholder="Ej: 5">
+                    </div>
+                    
+                    <button type="submit" id="btn-guardar">Guardar Producto</button>
+                    <button type="button" id="btn-cancelar" style="display:none;">Cancelar Edición</button>
+                </form>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <h3>Listado de Productos</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-productos-body"></tbody>
+                </table>
+            </div>
+        </main>
+
+        <script src="../javascript/admin-productos.js"></script>
+    </div>
+</body>
+</html>
