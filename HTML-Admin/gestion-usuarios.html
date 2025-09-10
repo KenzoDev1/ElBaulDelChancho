@@ -3,9 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Panel de Administración - Gestión de Usuarios</title>
 </head>
 <body>
-    
+    <!-- Contenedor principal del panel de Gestión de Usuarios-->
+    <div>
+        <!-- Barra de navegación lateral -->
+        <aside>
+            <h2>Administración</h2>
+            <nav>
+                <ul>
+                    <li><a href="menuadmin.html">Inicio</a></li>
+                    <li><a href="gestion-productos.html">Gestión de Productos</a></li>
+                    <li><a href="gestion-usuarios.html">Gestión de Usuarios</a></li>
+                    <li><a href="../login.html">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main>
+            <h1>Gestión de Usuarios</h1>
+
+            <div>
+                <h3 id="form-titulo">Añadir Nuevo Usuario</h3>
+                <!-- Contenedor para mostrar errores de validación -->
+                <div id="errores-form" style="color: red;"></div>
+
+                <form id="form-usuario">
+                    <input type="hidden" id="usuario-id">
+
+                    <div>
+                        <label for="usuario-nombre">Nombre Completo</label>
+                        <input type="text" id="usuario-nombre" required>
+                    </div>
+                    
+                    <div>
+                        <label for="usuario-email">Correo Electrónico</label>
+                        <input type="email" id="usuario-email" required>
+                    </div>
+
+                    <div>
+                        <label for="usuario-rol">Rol</label>
+                        <select id="usuario-rol" required>
+                            <option value="">-- Seleccione un rol --</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Vendedor</option>
+                            <option value="3">Cliente</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" id="btn-guardar">Guardar Usuario</button>
+                    <button type="button" id="btn-cancelar" style="display:none;">Cancelar Edición</button>
+                </form>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <h3>Listado de Usuarios</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-usuarios-body"></tbody>
+                </table>
+            </div>
+        </main>
+
+        <script src="../javascript/admin-usuarios.js"></script>
+    </div>
 </body>
 </html>
