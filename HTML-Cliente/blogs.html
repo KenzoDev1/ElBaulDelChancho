@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de sesión</title>
+    <title>Inicio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/login.css">
 </head>
 <body>
     <!-- Barra de navegacion -->
@@ -22,8 +21,9 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto"> <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="HTML-Cliente/inicio.html">Inicio</a>
+                    <ul class="navbar-nav me-auto"> 
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="inicio.html">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Productos</a>
@@ -47,46 +47,44 @@
             </div>
         </nav>
     </header>
+    
+    <!-- Main o Contenido principal -->
+    <main class="container my-5">
 
-    <!-- Formulario de inicio de sesión con Bootstrap 5 -->
-    <div class="container-fluid">
-        <div class="row justify-content-center align-items-center login-container"> <!--Clase de CSS-->
-            <div class="col-xs-10 col-sm-9 col-lg-10 col-xl-8 col-xxl-8">
-                <div class="card shadow-lg login-card"> <!--Clase de CSS-->
-                    <div class="row">
-                        <div class="col-xs-5 col-sm-5 col-lg-4 col-xl-6 col-xxl-6"> <!--Clase de CSS-->
-                            <div class="p-5">
-                                <h2 class="text-center mb-3">Iniciar sesion</h2>
-                                <form id="loginForm">
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Correo electronico</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electronico" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="password" class="form-label">Contraseña</label>
-                                        <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su contraseña" required>
-                                    </div>
-                                    <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="rememberMe">
-                                        <label class="form-check-label" for="rememberMe">Recuerdame</label>
-                                    </div>
-                                    <div class="d-grid">
-                                        <button type="submit" class="btn btn-primary btn-lg">Iniciar sesion</button>
-                                    </div>  
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 d-none d-lg-block login-image-bg"></div>
-                    </div>
-                </div>
+        <h2 class="text-center mb-5">NOTICIAS IMPORTANTES</h2>
+
+        <section class="row align-items-center mb-5">
+            <div class="col-md-7">
+                <h3>CASO CURIOSO #1</h3>
+                <p>
+                    Our North American Field Guides provide tips for identifying birds in all of the regions of the United States and Canada. Download any of our guides for free now!
+                </p>
+                <a href="detalle-blog-1.html" class="btn btn-primary">VER CASO</a>
             </div>
-        </div>
-    </div>
+            <div class="col-md-5 mt-3 mt-md-0">
+                <img src="https://placehold.co/500x300/6c757d/white?text=Imagen+Blog+1" class="img-fluid rounded" alt="Imagen representativa del caso 1">
+            </div>
+        </section>
+
+        <section class="row align-items-center flex-row-reverse">
+            <div class="col-md-7">
+                <h3>CASO CURIOSO #2</h3>
+                <p>
+                    Our North American Field Guides provide tips for identifying birds in all of the regions of the United States and Canada. Download any of our guides for free now!
+                </p>
+                <a href="detalle-blog-2.html" class="btn btn-primary">VER CASO</a>
+            </div>
+            <div class="col-md-5 mt-3 mt-md-0">
+                <img src="https://placehold.co/500x300/6c757d/white?text=Imagen+Blog+2" class="img-fluid rounded" alt="Imagen representativa del caso 2">
+            </div>
+        </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="py-3 my-4 bg-body-tertiary mb-0">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Inicio</a></li>
+        <li class="nav-item"><a href="inicio.html" class="nav-link active px-2">Inicio</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Productos</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Nosotros</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Blogs</a></li>
@@ -98,7 +96,5 @@
 
     <!-- Importando javascript de Bootstrap 5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="javascript/roles.js"></script>
-    <script src="javascript/login.js"></script>
-  </body>
+</body>
 </html>
