@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Panel de Vendedor - Inicio</title>
+    <!-- Tu compañero agregará aquí los estilos de Bootstrap -->
 </head>
 <body>
-    
+    <!-- Contenedor principal del panel de Vendedor -->
+    <div>
+        <!-- Barra de navegación lateral -->
+        <aside>
+            <h2>Panel de Vendedor</h2>
+            <nav>
+                <ul>
+                    <li><a href="menuvendedor.html">Inicio</a></li>
+                    <li><a href="vendedor-productos.html">Ver Productos</a></li>
+                    <li><a href="vendedor-ordenes.html">Ver Órdenes</a></li>
+                    <li><a href="../login.html">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main>
+            <h1>Inicio</h1>
+            <p>Bienvenido al panel de vendedor.</p>
+
+            <!-- Contenedor para tarjetas de resumen o widgets -->
+            <div class="dashboard-summary">
+                
+                <div class="summary-card">
+                    <h3>Productos Disponibles</h3>
+                    <p id="total-productos">--</p>
+                    <a href="vendedor-productos.html">Ver detalle</a>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Órdenes Recientes</h3>
+                    <p id="total-ordenes">--</p>
+                    <a href="vendedor-ordenes.html">Ver detalle</a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Aquí irían los scripts JS necesarios para esta vista -->
+    <!-- <script src="../javascript/vendedor-dashboard.js"></script> -->
 </body>
 </html>

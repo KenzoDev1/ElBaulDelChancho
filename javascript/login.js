@@ -1,43 +1,45 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const loginFormulario = document.getElementById('loginFormulario');
+document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('loginForm');
 
-    loginFormulario.addEventListener('submit', function(event) {
-        event.preventDefault();
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            // 1. Prevenir el envío del formulario y la recarga de la página
+            event.preventDefault(); 
 
-        // Obteniendo valores del formulario Login
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
+            // 2. Obtener los valores de los campos
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-        //  Obteniendo la lista de usuario y contraseña
-        const users = JSON.parse(localStorage.getItem('users')) || [];
+            // 3. Obtener los usuarios de la base de datos local
+            const users = JSON.parse(localStorage.getItem('users')) || [];
 
-        // busca un usuario que coincida con algun usuario de la lista
-        const foundUser = users.find(user =>
-            user.username === username && user.password === password
-        );
+            // 4. Buscar un usuario que coincida con el email y la contraseña
+            const foundUser = users.find(user => user.email === email && user.password === password);
 
-        if (foundUser){
-            const roleName = USER_NAME_ROLES[foundUser.role] || 'Usuario';
-            alert(`¡Inicio de sesión Exitoso! Bienvenido, ${roleName} ${foundUser.username}!`);
+            // 5. Comprobar si se encontró el usuario y redirigir según su rol
+            if (foundUser) {
+                // Guardar el usuario que inició sesión para usarlo en otras páginas
+                sessionStorage.setItem('currentUser', JSON.stringify(foundUser));
 
-            switch (foundUser.role) {
-                case USER_ROLES.ADMIN:
-                    window.location.href = 'HTML-Admin/menuadmin.html';
-                    break;
-                case USER_ROLES.VENDEDOR:
-                    window.location.href = 'HTML-Cliente/menucliente.html'; // Asumiendo que Vendedor y Cliente comparten menú
-                    break;
-                case USER_ROLES.CLIENTE:
-                    window.location.href = 'HTML-Cliente/menucliente.html';
-                    break;
-                default:
-                    // Opcional: manejar roles desconocidos, aunque no debería ocurrir.
-                    break;
+                switch (foundUser.tipoUsuario) {
+                    case 'administrador':
+                        window.location.href = 'HTML-Admin/menuadmin.html';
+                        break;
+                    case 'vendedor':
+                        // Asumiendo que tienes una vista para vendedor
+                        window.location.href = 'HTML-Vendedor/menuvendedor.html'; 
+                        break;
+                    case 'cliente':
+                        // Asumiendo que la vista de cliente es el index principal
+                        window.location.href = 'index.html'; 
+                        break;
+                    default:
+                        alert('Tipo de usuario no reconocido.');
+                }
+            } else {
+                // 6. Si no se encuentra, mostrar un mensaje de error
+                alert('Correo electrónico o contraseña incorrectos.');
             }
-        } else {
-            alert('Nombre de usuario o contraseña incorrectos.');
-        }
-
-        loginFormulario.reset();
-    });
+        });
+    }
 });
