@@ -17,20 +17,20 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderizarOrdenes(ordenes) {
         ordersAccordion.innerHTML = ''; // Limpiar el contenedor
 
-        // Es mejor mostrar las órdenes más nuevas primero
-        ordenes.reverse().forEach((orden, index) => {
+        // Mostrar las órdenes más nuevas primero
+        ordenes.slice().reverse().forEach((orden) => {
             const fecha = new Date(orden.fecha).toLocaleString('es-CL');
             const total = orden.total.toLocaleString('es-CL');
 
             // Crear el HTML para la tabla de productos de esta orden
             let itemsHtml = `
-                <table class="table table-striped">
+                <table class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Precio Unit.</th>
-                            <th>Subtotal</th>
+                            <th class="text-center">Cantidad</th>
+                            <th class="text-end">Precio Unit.</th>
+                            <th class="text-end">Subtotal</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 itemsHtml += `
                     <tr>
                         <td>${item.nombre}</td>
-                        <td>${item.cantidad}</td>
-                        <td>$${item.precio.toLocaleString('es-CL')}</td>
-                        <td>$${(item.cantidad * item.precio).toLocaleString('es-CL')}</td>
+                        <td class="text-center">${item.cantidad}</td>
+                        <td class="text-end">$${item.precio.toLocaleString('es-CL')}</td>
+                        <td class="text-end fw-bold">$${(item.cantidad * item.precio).toLocaleString('es-CL')}</td>
                     </tr>
                 `;
             });
@@ -53,7 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
             accordionItem.innerHTML = `
                 <h2 class="accordion-header" id="heading-${orden.id}">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${orden.id}" aria-expanded="false" aria-controls="collapse-${orden.id}">
-                        <strong>Orden #${orden.id}</strong> - Fecha: ${fecha} - Total: $${total}
+                        <div class="d-flex w-100 justify-content-between">
+                            <span><strong>Orden #${orden.id}</strong></span>
+                            <span>Cliente: ${orden.cliente}</span>
+                            <span>Fecha: ${fecha}</span>
+                            <span class="fw-bold">Total: $${total}</span>
+                        </div>
                     </button>
                 </h2>
                 <div id="collapse-${orden.id}" class="accordion-collapse collapse" aria-labelledby="heading-${orden.id}" data-bs-parent="#orders-accordion">
