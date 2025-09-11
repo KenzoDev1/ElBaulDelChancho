@@ -13,13 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
         productos.forEach(producto => {
             const col = document.createElement('div');
             col.classList.add('col');
+            // --- MODIFICACIÓN CLAVE ---
+            // Se envuelve la imagen y el título en un enlace <a> que redirige al detalle.
+            // Se le pasa el ID del producto por la URL. ej: ?id=1678886400000
             col.innerHTML = `
-                <div class="card h-100 product-card">
-                    <img src="${producto.imagen || 'https://placehold.co/300x225'}" class="card-img-top" alt="${producto.nombre}">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">${producto.nombre}</h5>
-                        <p class="card-text fw-bold">$${producto.precio.toLocaleString('es-CL')}</p>
-                        <button class="btn btn-primary w-100 btn-add-to-cart" data-id="${producto.id}">Añadir al carrito</button>
+                <div class="card h-100 product-card shadow-sm">
+                    <a href="detalle-producto.html?id=${producto.id}" class="text-decoration-none text-dark">
+                        <img src="${producto.imagen || 'https://placehold.co/300x225'}" class="card-img-top" alt="${producto.nombre}">
+                        <div class="card-body">
+                            <h5 class="card-title">${producto.nombre}</h5>
+                        </div>
+                    </a>
+                    <div class="card-footer bg-white border-0 text-center pb-3">
+                         <p class="card-text fw-bold fs-5 mb-2">$${producto.precio.toLocaleString('es-CL')}</p>
+                         <button class="btn btn-primary w-100 btn-add-to-cart" data-id="${producto.id}">Añadir al carrito</button>
                     </div>
                 </div>
             `;
@@ -39,8 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Verificamos si el producto ya está en el carrito
             const productoEnCarrito = carrito.find(p => p.id === productId);
             if (productoEnCarrito) {
-                productoEnCarrito.cantidad++;
+                productoEnCarrito.cantidad++; // Si ya está, solo aumenta la cantidad
             } else {
+                // Si no está, lo añade con cantidad 1
                 carrito.push({ ...productoSeleccionado, cantidad: 1 });
             }
 
@@ -48,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('carrito', JSON.stringify(carrito));
 
             // Opcional: Mostrar una notificación de que el producto fue añadido
-            alert(`${productoSeleccionado.nombre} ha sido añadido al carrito.`);
+            alert(`"${productoSeleccionado.nombre}" ha sido añadido al carrito.`);
         }
     }
 
