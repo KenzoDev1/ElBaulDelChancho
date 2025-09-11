@@ -46,8 +46,8 @@
                     </ul>
 
                     <div class="d-flex">
-                        <button type="button" class="btn btn-primary me-2">Iniciar sesion</button>
-                        <a href="register.html"><button type="button" class="btn btn-secondary">Registrarse</button></a>
+                        <a href="carrito.html" class="btn btn-outline-primary me-2">Ver Carrito</a>
+                        <a href="../login.html" class="btn btn-danger">Cerrar Sesión</a>
                     </div>
                 </div>
             </div>
@@ -61,95 +61,9 @@
             </div>
         </div>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-
-            <div class="col">
-                <div class="card h-100 product-card">
-                    <img src="https://via.placeholder.com/300x225" class="card-img-top" alt="Imagen de producto">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Nombre Producto</h5>
-                        <p class="card-text fw-bold">$8.000</p>
-                        <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 product-card">
-                    <img src="https://via.placeholder.com/300x225" class="card-img-top" alt="Imagen de producto">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Nombre Producto</h5>
-                        <p class="card-text fw-bold">$6.000</p>
-                        <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 product-card">
-                    <img src="https://via.placeholder.com/300x225" class="card-img-top" alt="Imagen de producto">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Nombre Producto</h5>
-                        <p class="card-text fw-bold">$10.000</p>
-                        <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 product-card">
-                    <img src="https://via.placeholder.com/300x225" class="card-img-top" alt="Imagen de producto">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Nombre Producto</h5>
-                        <p class="card-text fw-bold">$12.500</p>
-                        <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 product-card">
-                    <img src="https://via.placeholder.com/300x225" class="card-img-top" alt="Imagen de producto">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Nombre Producto</h5>
-                        <p class="card-text fw-bold">$5.500</p>
-                        <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 product-card">
-                    <img src="https://via.placeholder.com/300x225" class="card-img-top" alt="Imagen de producto">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Nombre Producto</h5>
-                        <p class="card-text fw-bold">$9.990</p>
-                        <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 product-card">
-                    <img src="https://via.placeholder.com/300x225" class="card-img-top" alt="Imagen de producto">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Nombre Producto</h5>
-                        <p class="card-text fw-bold">$15.000</p>
-                        <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 product-card">
-                    <img src="https://via.placeholder.com/300x225" class="card-img-top" alt="Imagen de producto">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Nombre Producto</h5>
-                        <p class="card-text fw-bold">$7.200</p>
-                        <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
+        <!-- El contenido de los productos se generará dinámicamente -->
+        <div id="product-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <!-- Las tarjetas de productos se insertarán aquí con JavaScript -->
         </div> 
     </main>
 
@@ -168,5 +82,7 @@
 
     <!-- Importando javascript de Bootstrap 5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Script para cargar productos y añadir al carrito -->
+    <script src="../javascript/productos.js"></script>
 </body>
 </html>

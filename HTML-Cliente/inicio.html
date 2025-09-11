@@ -40,8 +40,8 @@
                     </ul>
 
                     <div class="d-flex">
-                        <button type="button" class="btn btn-primary me-2">Iniciar sesion</button>
-                        <a href="register.html"><button type="button" class="btn btn-secondary">Registrarse</button></a>
+                        <a href="carrito.html" class="btn btn-outline-primary me-2">Ver Carrito</a>
+                        <a href="../login.html" class="btn btn-danger">Cerrar Sesión</a>
                     </div>
                 </div>
             </div>
@@ -95,65 +95,10 @@
 
         <section>
             <h2 class="text-center mb-4">Nuestros Productos</h2>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-                
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/300x200/555/white?text=Producto+1" class="card-img-top" alt="Imagen del producto">
-                        <div class="card-body">
-                            <h5 class="card-title">Nombre del Producto 1</h5>
-                            <p class="card-text">Una breve descripción o atributos del producto.</p>
-                            <p class="card-text fs-5 fw-bold text-end">$25.000</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-0 text-center">
-                            <a href="#" class="btn btn-success">Añadir al carrito</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/300x200/555/white?text=Producto+2" class="card-img-top" alt="Imagen del producto">
-                        <div class="card-body">
-                            <h5 class="card-title">Nombre del Producto 2</h5>
-                            <p class="card-text">Una breve descripción o atributos del producto.</p>
-                            <p class="card-text fs-5 fw-bold text-end">$30.000</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-0 text-center">
-                            <a href="#" class="btn btn-success">Añadir al carrito</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/300x200/555/white?text=Producto+3" class="card-img-top" alt="Imagen del producto">
-                        <div class="card-body">
-                            <h5 class="card-title">Nombre del Producto 3</h5>
-                            <p class="card-text">Una breve descripción o atributos del producto.</p>
-                            <p class="card-text fs-5 fw-bold text-end">$18.500</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-0 text-center">
-                            <a href="#" class="btn btn-success">Añadir al carrito</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/300x200/555/white?text=Producto+4" class="card-img-top" alt="Imagen del producto">
-                        <div class="card-body">
-                            <h5 class="card-title">Nombre del Producto 4</h5>
-                            <p class="card-text">Una breve descripción o atributos del producto.</p>
-                            <p class="card-text fs-5 fw-bold text-end">$42.000</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-0 text-center">
-                            <a href="#" class="btn btn-success">Añadir al carrito</a>
-                        </div>
-                    </div>
-                </div>
-
-                </div>
+            <!-- El contenido de los productos se generará dinámicamente -->
+            <div id="product-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <!-- Las tarjetas de productos se insertarán aquí con JavaScript -->
+            </div>
         </section>
     </main>
 
@@ -172,5 +117,7 @@
 
     <!-- Importando javascript de Bootstrap 5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Script para cargar productos y añadir al carrito -->
+    <script src="../javascript/productos.js"></script>
 </body>
 </html>

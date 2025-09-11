@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         break;
                     case 'cliente':
                         // Asumiendo que la vista de cliente es el index principal
-                        window.location.href = 'index.html'; 
+                        window.location.href = 'HTML-Cliente/inicio.html'; 
                         break;
                     default:
                         alert('Tipo de usuario no reconocido.');
